@@ -24,7 +24,7 @@ pipeline {
     }
     post {
     always {
-        slackSend channel: 'test', message:"started ${currentBuild.JOB_NAME}" 
+        slackSend channel: 'test', message:"started ${currentBuild.fullDisplayName}" 
     }
     }
 }
