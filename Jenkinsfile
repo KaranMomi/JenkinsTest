@@ -24,9 +24,7 @@ pipeline {
     }
     post {
     always {
-        slackSend channel: '#test',
-                  color: 'good',
-                  message: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
+        slackSend "started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
     }
     }
 }
