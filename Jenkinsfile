@@ -21,5 +21,11 @@ pipeline {
                 echo 'done'
             }
         }
+        post {
+    success {
+        slackSend channel: '#test',
+                  color: 'good',
+                  message: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
+    }
     }
 }
