@@ -21,7 +21,8 @@ pipeline {
                 echo 'done'
             }
         }
-        post {
+    }
+    post {
     success {
         slackSend channel: '#test',
                   color: 'good',
