@@ -24,7 +24,7 @@ pipeline {
     }
     post {
     always {
-        slackSend "started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+        slackSend channel: '#test', message: 'success', "started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)" 
     }
     }
 }
